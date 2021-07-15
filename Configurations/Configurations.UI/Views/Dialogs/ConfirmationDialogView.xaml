@@ -1,0 +1,71 @@
+﻿<UserControl
+   x:Class="Configurations.UI.Views.Dialogs.ConfirmationDialogView"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   Width="300"
+   mc:Ignorable="d">
+
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="..\..\Resources\Font.xaml" />
+            <ResourceDictionary Source="..\..\Resources\Colors.xaml" />
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <UserControl.FontFamily>
+      <StaticResource ResourceKey="MainFont" />
+   </UserControl.FontFamily>
+
+   <UserControl.FontSize>
+      <StaticResource ResourceKey="MainFontSize" />
+   </UserControl.FontSize>
+
+   <UserControl.Background>
+      <StaticResource ResourceKey="ContainersBackground" />
+   </UserControl.Background>
+
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition />
+         <RowDefinition />
+         <RowDefinition />
+      </Grid.RowDefinitions>
+
+      <TextBlock
+         Grid.Row="0"
+         Margin="20,20,20,0"
+         Text="{Binding Message,
+                        FallbackValue=Some message will be  here}"
+         TextWrapping="Wrap" />
+
+      <TextBlock
+         Grid.Row="1"
+         Margin="20,10,20,0"
+         VerticalAlignment="Center"
+         Text="Do you want to continue?" />
+
+      <StackPanel
+         Grid.Row="2"
+         Margin="0,20,20,15"
+         HorizontalAlignment="Right"
+         Orientation="Horizontal">
+         <Button
+            Width="100"
+            Height="30"
+            Command="{Binding YesCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            Content="Continue" />
+         <Button
+            Width="100"
+            Height="30"
+            Margin="10,0,0,0"
+            Command="{Binding NoCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            Content="Cancel" />
+      </StackPanel>
+   </Grid>
+</UserControl>

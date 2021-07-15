@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <Extern href="stdidcmd.h" />
+   <Extern href="vsshlids.h" />
+   <Include href="KnownImageIds.vsct" />
+
+   <Commands package="guidPackage">
+      
+      <Menus>
+         <Menu guid="CommandSetGuid" id="TopMenuId" priority="0x700" type="Menu">
+            <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
+            <Strings>
+               <ButtonText>Amigo</ButtonText>
+            </Strings>
+         </Menu>
+      </Menus>
+
+      <Groups>
+         <Group guid="CommandSetGuid" id="TopMenuGroupId" priority="0x0600">
+            <Parent guid="CommandSetGuid" id="TopMenuId" />
+         </Group>
+      </Groups>
+
+      <Buttons>
+         
+         <Button guid="CommandSetGuid" id="BookmarksListCommandId" priority="0x0100" type="Button">
+            <Parent guid="CommandSetGuid" id="TopMenuGroupId" />
+            <Icon guid="ImageCatalogGuid" id="TaskList" />
+            <CommandFlag>IconIsMoniker</CommandFlag>
+            <Strings>
+               <ButtonText>Bookmarks List</ButtonText>
+            </Strings>
+         </Button>
+         
+         <Button guid="CommandSetGuid" id="SettingsCommandId" priority="0x0110" type="Button">
+            <Parent guid="CommandSetGuid" id="TopMenuGroupId" />
+            <Icon guid="ImageCatalogGuid" id="ShowAllConfigurations" />
+            <CommandFlag>IconIsMoniker</CommandFlag>
+            <Strings>
+               <ButtonText>Settings</ButtonText>
+            </Strings>
+         </Button>
+         
+      </Buttons>
+   </Commands>
+
+   <Symbols>
+      <!-- This is the package guid. -->
+      <GuidSymbol name="guidPackage" value="{1741959f-3d16-4dca-9827-89b8c32dc936}" />
+
+      <!-- This is the guid used to group the menu commands together -->
+      <GuidSymbol name="CommandSetGuid" value="{dfea86e0-99d5-49e5-86e1-6b9068613fa8}">
+         
+         <IDSymbol name="TopMenuId" value="0x1002" />
+         <IDSymbol name="TopMenuGroupId" value="0x1012" />
+         <IDSymbol name="BookmarksListCommandId" value="0x0100" />
+         <IDSymbol name="SettingsCommandId" value="0x0200" />
+
+      </GuidSymbol>
+   </Symbols>
+</CommandTable>

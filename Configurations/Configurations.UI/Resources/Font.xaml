@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:n="clr-namespace:System;assembly=mscorlib">
+
+
+   <FontFamily x:Key="MainFont">sans-serif</FontFamily>
+   <n:Double x:Key="MainFontSize">14</n:Double>
+
+</ResourceDictionary>

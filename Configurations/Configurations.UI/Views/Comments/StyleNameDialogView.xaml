@@ -1,0 +1,88 @@
+﻿<UserControl
+   x:Class="Configurations.UI.Views.Comments.StyleNameDialogView"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:sys="clr-namespace:System;assembly=mscorlib"
+   xmlns:vm="clr-namespace:Configurations.UI.ViewModels"
+   Width="290"
+   IsTabStop="False"
+   mc:Ignorable="d">
+
+   <UserControl.Resources>
+      <ResourceDictionary>
+
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="..\..\Resources\Font.xaml" />
+            <ResourceDictionary Source="..\..\Resources\Colors.xaml" />
+            <ResourceDictionary Source="..\..\Resources\ValidationErrorTemplateStyle.xaml" />
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <UserControl.FontFamily>
+      <StaticResource ResourceKey="MainFont" />
+   </UserControl.FontFamily>
+
+   <UserControl.FontSize>
+      <StaticResource ResourceKey="MainFontSize" />
+   </UserControl.FontSize>
+
+   <UserControl.Background>
+      <StaticResource ResourceKey="ContainersBackground" />
+   </UserControl.Background>
+
+   <Grid Width="250">
+      <Grid.RowDefinitions>
+         <RowDefinition MinHeight="70" />
+         <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <StackPanel
+         Grid.Row="0"
+         VerticalAlignment="Bottom"
+         FocusManager.FocusedElement="{Binding ElementName=NameTextBox}">
+         <Label
+            Padding="0,0,0,3"
+            Content="Name"
+            IsTabStop="False" />
+         <TextBox
+            Name="NameTextBox"
+            Padding="3"
+            IsTabStop="True"
+            MaxLength="16"
+            Style="{StaticResource TextBoxErrorTemplateStyle}"
+            TabIndex="1"
+            Text="{Binding Name,
+                           Mode=TwoWay,
+                           ValidatesOnDataErrors=True,
+                           UpdateSourceTrigger=PropertyChanged}" />
+      </StackPanel>
+
+      <StackPanel
+         Grid.Row="1"
+         Margin="0,20,0,15"
+         HorizontalAlignment="Right"
+         Orientation="Horizontal">
+         <Button
+            Width="100"
+            Height="30"
+            Margin="0,0,10,0"
+            Command="{Binding OkCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            Content="Ok"
+            IsTabStop="True"
+            TabIndex="2" />
+         <Button
+            Width="100"
+            Height="30"
+            Command="{Binding CancelCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            Content="Cancel"
+            IsTabStop="True"
+            TabIndex="3" />
+      </StackPanel>
+   </Grid>
+
+</UserControl>

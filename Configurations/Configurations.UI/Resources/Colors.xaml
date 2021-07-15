@@ -1,0 +1,44 @@
+﻿<ResourceDictionary
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+   <SolidColorBrush
+      x:Key="TitleBackground"
+      Color="#595959" />
+
+   <SolidColorBrush
+      x:Key="ContainersBackground"
+      Color="#fafafa" />
+
+   <SolidColorBrush
+      x:Key="ContainerBorderBrush"
+      Color="#3b3b3b" />
+
+   <SolidColorBrush
+      x:Key="SelectedItemBackground"
+      Color="#c1c5c9" />
+
+   <SolidColorBrush
+      x:Key="SelectedItemForeground"
+      Color="Black" />
+
+   <SolidColorBrush
+      x:Key="InactiveSelectedItemBackground"
+      Color="#E2E2E2" />
+
+   <SolidColorBrush
+      x:Key="InactiveSelectedItemForeground"
+      Color="Black" />
+
+
+   <SolidColorBrush
+      x:Key="DeleteRed"
+      Color="#ff5757" />
+
+   <SolidColorBrush
+      x:Key="EditBlue"
+      Color="#136cbf" />
+
+
+</ResourceDictionary>
